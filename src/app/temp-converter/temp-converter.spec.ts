@@ -8,8 +8,9 @@ describe('TempConverterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [TempConverter]
-});
+      imports: [TempConverter]
+    });
+
     fixture = TestBed.createComponent(TempConverter);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,15 +20,23 @@ describe('TempConverterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should convert 0 celsius to 32 fahrenheit', () => {
-    const tempval = '0';
-    component.convertCelsius(tempval);
-    expect(component.fahrenheitValue).toBeCloseTo(32);
+  it('should add two numbers', () => {
+    component.add('10', '5');
+    expect(component.result).toBe(15);
   });
 
-  it('should convert -100 fahrenheit to -73.33 celsius', () => {
-    const tempval = '-100';
-    component.convertFahrenheit(tempval);
-    expect(component.celsiusValue).toBeCloseTo(-73.33);
+  it('should subtract two numbers', () => {
+    component.subtract('10', '5');
+    expect(component.result).toBe(5);
+  });
+
+  it('should multiply two numbers', () => {
+    component.multiply('10', '5');
+    expect(component.result).toBe(50);
+  });
+
+  it('should divide two numbers', () => {
+    component.divide('10', '5');
+    expect(component.result).toBe(2);
   });
 });

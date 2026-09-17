@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-temp-converter',
   templateUrl: './temp-converter.html',
   styleUrls: ['./temp-converter.css'],
-  imports: [DecimalPipe]
 })
 export class TempConverter {
-  celsiusValue = 0;
-  fahrenheitValue = 0;
+  result = 0;
 
-  convertCelsius(value: string): void {
-    this.celsiusValue = Number(value);
-    this.fahrenheitValue = ((this.celsiusValue * 9) / 5) + 32;
+  add(v1: string, v2: string): void {
+    this.result = Number(v1) + Number(v2);
   }
 
-  convertFahrenheit(value: string): void {
-    this.fahrenheitValue = Number(value);
-    this.celsiusValue = ((this.fahrenheitValue - 32) * 5) / 9;
+  subtract(v1: string, v2: string): void {
+    this.result = Number(v1) - Number(v2);
+  }
+
+  multiply(v1: string, v2: string): void {
+    this.result = Number(v1) * Number(v2);
+  }
+
+  divide(v1: string, v2: string): void {
+    this.result = Number(v1) / Number(v2);
   }
 }

@@ -4,7 +4,7 @@
       <label for="input1">Input 1:</label>
     </td>
     <td>
-      <input name="input1" id="input1" value="{{celsiusValue | number: '1.0-2'}}" #celsius>
+      <input name="input1" id="input1" #v1>
     </td>
   </tr>
   <tr>
@@ -12,21 +12,22 @@
       <label for="input2">Input 2:</label>
     </td>
     <td>
-      <input name="input2" id="input2" value="{{fahrenheitValue | number: '1.0-2'}}" #fahrenheit>
+      <input name="input2" id="input2" #v2>
     </td>
   </tr>
   <tr>
     <td>
-      <button (click)="convertCelsius(celsius.value)">*</button>
+      <button (click)="multiply(v1.value, v2.value)">*</button>
     </td>
     <td>
-      <button (click)="convertFahrenheit(fahrenheit.value)">/</button>
+      <button (click)="divide(v1.value, v2.value)">/</button>
     </td>
     <td>
-      <button (click)="convertCelsius(celsius.value)">+</button>
+      <button (click)="add(v1.value, v2.value)">+</button>
     </td>
     <td>
-      <button (click)="convertFahrenheit(fahrenheit.value)">-</button>
+      <button (click)="subtract(v1.value, v2.value)">-</button>
     </td>
   </tr>
+  <h2>Résultat : {{ result }}</h2>
 </table>
